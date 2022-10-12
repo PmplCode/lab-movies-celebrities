@@ -1,0 +1,11 @@
+<h2>Pelis</h2>
+<hr>
+{{#each mov}}
+    <h5><strong>Titul: </strong>{{title}}</h5>
+    <p><strong>Genere: </strong>{{genre}}</p>
+
+    <form action="/movies/{{_id}}">
+            <input class="btn btn-info" type="submit" value="Més sobre la peli">
+        </form>
+    <hr>
+{{/each}}

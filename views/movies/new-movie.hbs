@@ -1,0 +1,23 @@
+<h2>New Movie!</h2>
+    <form action="/movies/create" method="POST" class="w-25 mx-auto m-5">
+        <div class="mb-3">
+            <label for="titol" class="form-label">Titol de la Peli</label>
+            <input type="text" class="form-control" id="titol" aria-describedby="emailHelp" autocomplete="off" name="title">
+
+            <label for="titol" class="form-label">Genere</label>
+            <input type="text" class="form-control" id="titol" aria-describedby="emailHelp" name="genre">
+
+            <label for="titol" class="form-label">Plot</label>
+            <input type="text" class="form-control" id="titol" aria-describedby="emailHelp" name="plot">
+
+            <label for="author-select">Famós que apareix
+                <select name="cast">
+                <option disable selected value=""></option>
+                {{#each dbCelebs}}
+                    <option value="{{this._id}}"> {{this.name}} </option>
+                {{/each}}
+                </select>
+            </label>
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,23 @@
+<h1 class="text-center p-4 h4">Editar peli</h1>
+
+<form action="/movies/{{idPeli}}/edit" method="POST" class="w-50 mx-auto m-5">
+    <div class="mb-3">
+        <label for="titol" class="form-label">Títol de la peli</label>
+        <input type="text" class="form-control" id="titol" aria-describedby="emailHelp" name="title" value="{{title}}">
+    </div>
+    <div class="mb-3">
+        <label for="genre" class="form-label">Genere</label>
+        <input type="text" class="form-control" id="director" aria-describedby="emailHelp" name="genre" value="{{genre}}">
+    </div>
+    <div class="mb-3">
+        <label for="year" class="form-label">Plot</label>
+        <input type="text" class="form-control" id="year" aria-describedby="emailHelp" name="plot" value="{{plot}}">
+    </div>
+    {{#each cast}}
+    <div class="mb-3">
+        <label for="year" class="form-label">Actor</label>
+        <input type="text" class="form-control" id="year" aria-describedby="emailHelp"  value="{{this.name}}" readonly>
+    </div>
+    {{/each}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,16 @@
+<h3><strong>Titul: </strong>{{movi.title}}</h3>
+<p><strong>Genere: </strong>{{movi.genre}}</p>
+<p><strong>Plot: </strong>{{movi.plot}}</p>
+<h5><strong>Cast:</strong></h5>
+{{#each movi.cast}}
+    <ul><p>{{name}}</p></ul>
+    <ul><p>{{occupation}}</p></ul>
+    <ul><p>{{catchPhrase}}</p></ul>
+{{/each}}
+    <form action="/movies/{{movi._id}}/edit">
+            <input class="btn btn-info border" type="submit" value="Editar Pelicula">
+    </form>
+    <form action="/movies/{{movi._id}}/delete" method="post">
+            <input class="btn btn-danger border" type="submit" value="Eliminar Pelicula">
+    </form>
+    <hr>
