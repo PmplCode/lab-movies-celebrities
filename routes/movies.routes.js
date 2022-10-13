@@ -77,11 +77,12 @@ router.get("/:idPeli/edit", (req, res, next) => {
 
 router.post("/:idPeli/edit", (req, res, next) => {
     console.log("edit req.body: ", req.body)
-    Movie.findOneAndUpdate(req.params.idPeli, req.body)
+    console.log("edit req.params.idPeli: ", req.params.idPeli)
+    const filter = { _id: req.params.idPeli }
+    console.log("filter: ", filter)
+    Movie.findOneAndUpdate(filter, req.body)
     .then(result => {
-        const data = {
-            movi: req.body
-        }
+        console.log("result edit: ", result)
         res.redirect("/movies/movies");
     })
 })
